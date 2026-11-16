@@ -1,0 +1,54 @@
+{
+  "train_list": "/kaggle/input/datasets/qnv8071/xacle-2027-data/XACLE_Challenge_2027_development_dataset/meta_data/train_average.csv",
+  "validation_list": "/kaggle/input/datasets/qnv8071/xacle-2027-data/XACLE_Challenge_2027_development_dataset/meta_data/validation_average.csv",
+  "test_list": "/kaggle/input/datasets/qnv8071/xacle-2027-data/XACLE_Challenge_2027_development_dataset/meta_data/test.csv",
+  "test_average_list": "/kaggle/input/datasets/qnv8071/xacle-2027-data/XACLE_Challenge_2027_development_dataset/meta_data/test_average.csv",
+  "wav_dir": "/kaggle/input/datasets/qnv8071/xacle-2027-data/XACLE_Challenge_2027_development_dataset/wav",
+  "output_dir": "/kaggle/working/outputs",
+  "batch_size": 8,
+  "validation_batch_size": 8,
+  "test_batch_size": 8,
+  "num_workers": 0,
+  "max_len": 10,
+  "sample_rate": 16000,
+  "device": "cuda",
+  "model": {
+    "M2D": {
+      "ckpt": "/kaggle/input/datasets/qnv8071/xacle-weights/weights/pretrained/checkpoint-30.pth"
+    },
+    "MGA": {
+      "config": "./MGA-CLAP/settings/inference_example.yaml",
+      "ckpt": "/kaggle/input/datasets/qnv8071/xacle-weights/weights/pretrained/mga-clap.pt"
+    }
+  },
+  "preprocessor": {
+    "A": {
+      "Normalizer": "Normalizer_A",
+      "StandardScaler": "StandardScaler_A"
+    },
+    "B": {
+      "Normalizer": "Normalizer_B",
+      "StandardScaler": "StandardScaler_B"
+    }
+  },
+  "SVR": {
+    "A": {
+      "name": "SVR_A",
+      "input_param": {
+        "C": 0.5,
+        "kernel": "rbf",
+        "epsilon": 0.08,
+        "gamma": "scale"
+      }
+    },
+    "B": {
+      "name": "SVR_B",
+      "input_param": {
+        "C": 0.5,
+        "kernel": "rbf",
+        "epsilon": 0.02,
+        "gamma": "scale"
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "id": "qnv8071/xacle-ensemble-training",
+  "title": "XACLE Ensemble Training",
+  "code_file": "run_xacle.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": ["qnv8071/xacle-2027-data", "qnv8071/xacle-weights"]
+}
